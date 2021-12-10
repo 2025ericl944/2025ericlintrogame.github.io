@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/othersites.css">
+    <title>The Event Sheet</title>
+</head>
+<body>
+<h1 class="center">Event Sheet</h1>
+<img src="../Media/event1.png" alt="The Layout" style="width:900px;height:330px;" class="imgcent">
+<img src="../Media/event2.png" alt="The Layout" style="width:900px;height:500px;" class="imgcent">
+<img src="../Media/event3.png" alt="The Layout" style="width:900px;height:630px;" class="imgcent">
+<img src="../Media/event4.png" alt="The Layout" style="width:900px;height:610px;" class="imgcent">
+<img src="../Media/event5.png" alt="The Layout" style="width:900px;height:200px;" class="imgcent">
+<h1 class="center">Events and Functions</h1>
+<p class="center">There are 7 categories that the events are sorted into, with 4 variables and 1 piece of unorganized code. That 1 piece of code makes the player go through Jump-Thru Platforms when they press down.</p>
+<h2 class="center">Variables</h2>
+<p class="center">The Health variable controls the Players' Health. The health is shared because I am too lazy to code in individual health bars. You start off with 4 and the game resets when you get to 0. Next is the Player2Number and Player1Number variables. They count how many instances of Player 1 and Player 2 there are. At first, this may seem useless, but it is required to prevent you from deleting both players when selecting which one to play as. Score is pretty self-explanatory. It controls you score from pushing balls into the goal. It can even go into the negatives!</p>
+<h2 class="center">Player 2 Controls</h2>
+<p class="center">All of this adds WASD controls due to the fact that WASD isn't the default control system in Construct. A is left, W is to jump, D is right, and S is for going down through Jump-Thru Platforms.</p>
+<h2 class="center">Scoring</h2>
+<p class="center">This controls anything related to the Goal, or the green bar at the bottom of the layout. A lot happens when something collides with the goal, as the game either adds 1 or subtracts 1 from the "Score" variable. It then updates the text that displays your score and animates the Goal for a bit to make it look cool. If a ball hits the goal, it will teleport the ball to a specific location on the map. Anything else will fall through the goal and reappear at the top of the layout due to the Wrap-Around Behavior.</p>
+<h2 class="center">Stalagtites</h2>
+<p class="center">This controls anything related to the Stalagtites, or the spikes below each one of the huge platforms. It's harmless to players, but the moment a ball or box hits one, it will "destroy" the item, or basically teleport it to another location on the map. The contacted spike also turns red for a bit to be cool.</p>
+<h2 class="center">On Start</h2>
+<p class="center">This controls everything the moment the layout is started. It stops animations from automatically playing, along with setting objects to the correct frames of their animations. For the text on the HUD, it sets their opacity to 100 so that they display.</p>
+<h2 class="center">HUD</h2>
+<p class="center">This controls the HUD, or the stuff that follows you on the screen and displays important information. It sets the Health Variable to 4 on the start of the layout, and then sets the text from the Placeholder to a correct display of the Health. It also makes the introduction text disappear upon the pressing of the Enter Button.</p>
+<h2 class="center">Turret and Health</h2>
+<p class="center">This controls the Turret and the Health System in general. First, on the start of the layout, it makes the turret acquire the players are targets, so it can find and shoot them. When the turret shoots, a bullet spawns at the tip of the barrel and the Turret plays the Shoot animation. Upon collision with the Player, the bullet will destroy itself, subtract 1 from the Health variable, sets the Health text, and sets the animation frame of the Healthbar to 1+the Health Variable's current value. Animation Frame 0 is for when the Health is over 4. If a bullet hits the player but the shift button is down, the Player will parry the bullet and not take any damage. It spawns a parry sprite at its' location, resets the Health so that you haven't taken any damage, aniamtes the parry and then deletes it. Next, if the Health is equal to 0, then the game will restart and the variables will be reset. If you parry near a box, you will definitely not heal your Health. Lastly, if you have more than 4 Health, the Healthbar goes yellow.</p>
+<h2 class="center">Player Number</h2>
+<p class="center">This last category of events controls the number of Players there are so that both Players aren't deleted. This is taken from the intro text, which tells you about playing as 1 player. If you press 1, the system will check to see if the is at least 1 instance of Player 1, or the Blue block. If so, it will destroy Player 2 and set the Player2Number variable to 0. If you press 2, the system checks if there is at least 1 instance of Player 2, or the Red block. If so, Player 1 will be destroyed and the Player1Number variable will be set to 0.</p>
+
+<h1 class="center">Back</h1>
+
+<a class="coolbutton" href="../index.html">Back to Main Page</a>
+
+</body>
+</html>
